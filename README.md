@@ -40,3 +40,23 @@ with `python -m pip install -r requirements.txt`.
 hall of fame page and generate a CSV in `tables/`.
 4. Run `./combine-tables.sh` to combine all the generated HoF CSVs.
 This step creates the file `tables/combined.csv`.
+
+## Sample data
+
+```csv
+Magic 120-Cell, 1, Noel Chalmers, 1229155200.0
+Magic 120-Cell, 2, Matt Galla, 1293782400.0
+Magic 120-Cell, 3, Adam Ford, 1299571200.0
+Magic 120-Cell, 4, Nan Ma, 1308466800.0
+Magic 120-Cell, 5, Kitti Varga, 1313910000.0
+Magic 120-Cell, 6, Andrey Astrelin, 1314860400.0
+Magic 120-Cell, 7, Philip Strimpel, 1353484800.0
+Magic 120-Cell, 8, Raymond Zhao, 1409382000.0
+Magic 120-Cell, 9, Alvin Yang, 1437375600.0
+Magic 120-Cell, 10, Guderian Raborg, 1451030400.0
+Magic 120-Cell, 11, Douglas Shamlin, 1470553200.0
+Magic 120-Cell, 12, Jeremy Shahan, 1491462000.0
+Magic 120-Cell, 13, Michiel Vandecappelle, 1611734400.0
+Magic 120-Cell, 14, Charles Doan, 1620975600.0
+Magic 120-Cell, 15, Djair Maynart, 1639123200.0
+```
