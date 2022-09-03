@@ -3,7 +3,7 @@ from os import path
 from bs4 import BeautifulSoup
 from dateutil import parser
 
-from parser_utils import write_csv
+from parser_utils import process_name, write_csv
 
 # In-file: pages/mht633-hof.html
 # Out-file: tables/mht633-hof.csv
@@ -17,21 +17,6 @@ with open(in_file) as f:
 
 # Each entry holds { puzzle, solve_count, solver_name, solve_date }
 entries = []
-
-def process_name(td):
-    def omit_age(s):
-        # exclude " at age <age>"
-        unwanted_matches = [' at age']
-        for unwanted_match in unwanted_matches:
-            if unwanted_match in s:
-                s = s[:s.index(unwanted_match)]
-        return s
-    fragments = []
-    for s in td.strings:
-        fragments.append(s)
-    joined_strings = ' '.join(fragments)
-    omit_age_string = omit_age(joined_strings).strip()
-    return omit_age_string
 
 def parse_date(s):
     parsed_date = parser.parse(s, dayfirst=False)
