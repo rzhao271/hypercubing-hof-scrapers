@@ -58,4 +58,5 @@ parse_puzzle_section('5^4', tables[2])
 # { puzzle, solve_count, solver_name, solve_date }
 with open(out_file, 'w') as f:
     for entry in entries:
-        f.write(f'{entry["puzzle"]}, {entry["solve_count"]}, {entry["solver_name"]}, {entry["solve_date"]}\n')
+        f.write(f'{entry["puzzle"]}, {entry["solve_count"]}, ' + 
+                f'{entry["solver_name"]}, {entry["solve_date"]}\n')
