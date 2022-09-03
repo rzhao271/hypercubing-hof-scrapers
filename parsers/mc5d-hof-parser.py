@@ -3,6 +3,8 @@ from os import path
 from bs4 import BeautifulSoup
 from dateutil import parser
 
+from writer import write_csv
+
 # In-file: pages/mc5d-hof.html
 # Out-file: tables/mc5d-hof.csv
 
@@ -65,8 +67,4 @@ assert len(tables) == 6
 for i in range(6):
     parse_puzzle_section(f'{i + 2}^5', tables[i])
 
-# { puzzle, solve_count, solver_name, solve_date }
-with open(out_file, 'w') as f:
-    for entry in entries:
-        f.write(f'{entry["puzzle"]}, {entry["solve_count"]}, ' + 
-                f'{entry["solver_name"]}, {entry["solve_date"]}\n')
+write_csv(out_file, entries)

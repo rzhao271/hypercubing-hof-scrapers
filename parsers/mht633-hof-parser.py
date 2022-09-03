@@ -3,6 +3,8 @@ from os import path
 from bs4 import BeautifulSoup
 from dateutil import parser
 
+from writer import write_csv
+
 # In-file: pages/mht633-hof.html
 # Out-file: tables/mht633-hof.csv
 
@@ -52,11 +54,8 @@ tables = soup.find_all('table')
 assert len(tables) == 7
 
 for table in tables:
-    puzzle_name = table.previous_sibling.previous_sibling.string
+    puzzle_name = ('Magic Hyperbolic Tile {6,3,3} ' +
+                   table.previous_sibling.previous_sibling.string)
     parse_puzzle_section(puzzle_name, table)
 
-# { puzzle, solve_count, solver_name, solve_date }
-with open(out_file, 'w') as f:
-    for entry in entries:
-        f.write(f'{entry["puzzle"]}, {entry["solve_count"]}, ' + 
-                f'{entry["solver_name"]}, {entry["solve_date"]}\n')
+write_csv(out_file, entries)

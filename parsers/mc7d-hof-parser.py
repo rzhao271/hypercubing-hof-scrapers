@@ -3,6 +3,8 @@ from os import path
 from bs4 import BeautifulSoup
 from dateutil import parser
 
+from writer import write_csv
+
 # In-file: pages/mc7d-hof.html
 # Out-file: tables/mc7d-hof.csv
 
@@ -57,8 +59,4 @@ for dim in range(2):
             break
         parse_puzzle_section(f'{size + 3}^{dim + 6}', tables[dim * 3 + size])
 
-# { puzzle, solve_count, solver_name, solve_date }
-with open(out_file, 'w') as f:
-    for entry in entries:
-        f.write(f'{entry["puzzle"]}, {entry["solve_count"]}, ' + 
-                f'{entry["solver_name"]}, {entry["solve_date"]}\n')
+write_csv(out_file, entries)

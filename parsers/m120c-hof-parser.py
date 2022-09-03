@@ -3,6 +3,8 @@ from os import path
 from bs4 import BeautifulSoup
 from dateutil import parser
 
+from writer import write_csv
+
 # In-file: pages/m120c-hof.html
 # Out-file: tables/m120c-hof.csv
 
@@ -52,9 +54,4 @@ def parse_puzzle_section(puzzle_name, table):
 # and do layout at the same time.
 table = soup.table.find('table', id='AutoNumber5').table
 parse_puzzle_section('Magic 120-cell', table)
-
-# { puzzle, solve_count, solver_name, solve_date }
-with open(out_file, 'w') as f:
-    for entry in entries:
-        f.write(f'{entry["puzzle"]}, {entry["solve_count"]}, ' + 
-                f'{entry["solver_name"]}, {entry["solve_date"]}\n')
+write_csv(out_file, entries)
