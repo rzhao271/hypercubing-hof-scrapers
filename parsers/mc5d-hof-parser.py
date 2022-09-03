@@ -24,14 +24,26 @@ def process_name(td):
             if unwanted_match in s:
                 s = s[:s.index(unwanted_match)]
         return s
-    joined_strings = ''.join(td.strings).strip()
+    fragments = []
+    for s in td.strings:
+        fragments.extend([fragment.strip() for fragment in s.split(' ')
+                          if len(fragment.strip())])
+    joined_strings = ' '.join(fragments)
     omit_age_string = omit_age(joined_strings)
     return omit_age_string
 
-def parse_date(s):
-    if s.startswith('~'):
-        s = s[1:]
-    parsed_date = parser.parse(s, dayfirst=False)    
+def parse_date(td):
+    if td.strings:
+        s = ''.join(td.strings)
+        # Take out using MC7D clarifications
+        if ' (' in s:
+            s = s[:s.index(' (')]
+    else:
+        s = td.string
+    # Special case for Matthew Sheerin's 7^5 solve
+    if 'Friday the 13th,' in s and 'Nov 2009' in s:
+        s = '11/13/09'
+    parsed_date = parser.parse(s, dayfirst=False, yearfirst=False)    
     return parsed_date.timestamp()
 
 def parse_puzzle_section(puzzle_name, table):
@@ -56,4 +68,5 @@ for i in range(6):
 # { puzzle, solve_count, solver_name, solve_date }
 with open(out_file, 'w') as f:
     for entry in entries:
-        f.write(f'{entry["puzzle"]}, {entry["solve_count"]}, {entry["solver_name"]}, {entry["solve_date"]}\n')
+        f.write(f'{entry["puzzle"]}, {entry["solve_count"]}, ' + 
+                f'{entry["solver_name"]}, {entry["solve_date"]}\n')
