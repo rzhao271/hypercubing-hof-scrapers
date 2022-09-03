@@ -3,7 +3,7 @@ from os import path
 from bs4 import BeautifulSoup
 from dateutil import parser
 
-from writer import write_csv
+from parser_utils import write_csv
 
 # In-file: pages/mht633-hof.html
 # Out-file: tables/mht633-hof.csv
