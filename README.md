@@ -60,3 +60,7 @@ Magic 120-Cell, 13, Michiel Vandecappelle, 1611734400.0
 Magic 120-Cell, 14, Charles Doan, 1620975600.0
 Magic 120-Cell, 15, Djair Maynart, 1639123200.0
 ```
+
+## References
+
+- [Beautiful Soup documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
