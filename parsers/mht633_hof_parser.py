@@ -39,7 +39,7 @@ tables = soup.find_all('table')
 assert len(tables) == 7
 
 for table in tables:
-    puzzle_name = ('Magic Hyperbolic Tile {6,3,3} ' +
+    puzzle_name = ('MHT633 ' +
                    table.previous_sibling.previous_sibling.string)
     parse_puzzle_section(puzzle_name, table)
 
