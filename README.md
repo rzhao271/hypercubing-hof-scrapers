@@ -42,24 +42,40 @@ with `python -m pip install -r requirements.txt`.
 5. Run `./run-analyzers.sh` to run the various analyzers in `analyzers/`.
 The analyzers create CSVs in `tables/` and PNGs in `figures/`.
 
-## Sample data
+## Sample generated data
 
+`tables/m120c-hof.csv`
 ```csv
-Magic 120-Cell, 1, Noel Chalmers, 1229155200.0
-Magic 120-Cell, 2, Matt Galla, 1293782400.0
-Magic 120-Cell, 3, Adam Ford, 1299571200.0
-Magic 120-Cell, 4, Nan Ma, 1308466800.0
-Magic 120-Cell, 5, Kitti Varga, 1313910000.0
-Magic 120-Cell, 6, Andrey Astrelin, 1314860400.0
-Magic 120-Cell, 7, Philip Strimpel, 1353484800.0
-Magic 120-Cell, 8, Raymond Zhao, 1409382000.0
-Magic 120-Cell, 9, Alvin Yang, 1437375600.0
-Magic 120-Cell, 10, Guderian Raborg, 1451030400.0
-Magic 120-Cell, 11, Douglas Shamlin, 1470553200.0
-Magic 120-Cell, 12, Jeremy Shahan, 1491462000.0
-Magic 120-Cell, 13, Michiel Vandecappelle, 1611734400.0
-Magic 120-Cell, 14, Charles Doan, 1620975600.0
-Magic 120-Cell, 15, Djair Maynart, 1639123200.0
+Magic 120-cell,1,Noel Chalmers,1229155200.0
+Magic 120-cell,2,Matt Galla,1293782400.0
+Magic 120-cell,3,Adam Ford,1299571200.0
+Magic 120-cell,4,Nan Ma,1308466800.0
+Magic 120-cell,5,Kitti Varga,1313910000.0
+Magic 120-cell,6,Andrey Astrelin,1314860400.0
+Magic 120-cell,7,Philip Strimpel,1353484800.0
+Magic 120-cell,8,Raymond Zhao,1409382000.0
+Magic 120-cell,9,Alvin Yang,1437375600.0
+Magic 120-cell,10,Guderian Raborg,1451030400.0
+Magic 120-cell,11,Douglas Shamlin,1470553200.0
+Magic 120-cell,12,Jeremy Shahan,1491462000.0
+Magic 120-cell,13,Michiel Vandecappelle,1611734400.0
+Magic 120-cell,14,Charles Doan,1620975600.0
+Magic 120-cell,15,Djair Maynart,1639123200.0
+```
+
+`tables/recent_solvers.csv`
+```csv
+solver,puzzle_name,solve_num
+Robin Essenburg,Physical 2^4,34
+Robin Essenburg,5^4,80
+余朗坤,5^4,79
+Kevin Liu,3^6,17
+Robin Essenburg,4^4,105
+Adrián Vasvári,Physical 2^4,33
+Robin Essenburg,3^4,488
+Langkun Yu (余朗坤),3^5,88
+George Jeno,Physical 2^4,32
+Nicole Sheehan,Physical 2^4,31
 ```
 
 ## Known issues
