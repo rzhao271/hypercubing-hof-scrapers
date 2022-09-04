@@ -32,6 +32,9 @@ def parse_puzzle_section(puzzle_name, table):
             continue
         solve_count = tds[0].div.string
         solver_name = process_name(tds[1])
+        # Special case for A. Farkas
+        if solver_name == 'Andy Farkas':
+            solver_name = 'A. Farkas'
         solve_date = parse_date(tds[2].div.string)
         entries.append({
             'puzzle': puzzle_name,
