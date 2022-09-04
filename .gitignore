@@ -3,3 +3,4 @@ pages/*.html
 tables/*.csv
 figures/*.png
 __pycache__/
+*.zip

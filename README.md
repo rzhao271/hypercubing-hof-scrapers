@@ -61,6 +61,12 @@ Magic 120-Cell, 14, Charles Doan, 1620975600.0
 Magic 120-Cell, 15, Djair Maynart, 1639123200.0
 ```
 
+## Known issues
+
+The largest issue is that some names appear different on different halls of
+fame. The data should be interpreted as an approximation rather than as
+exact figures.
+
 ## References
 
 - [Beautiful Soup documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
