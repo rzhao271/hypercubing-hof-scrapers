@@ -5,7 +5,7 @@ import pandas as pd
 
 script_dir = path.dirname(path.realpath(__file__))
 in_file = path.join(script_dir, '../tables/combined.csv')
-out_file = path.join(script_dir, 'num_solvers.png')
+out_file = path.join(script_dir, '../figures/num_solvers.png')
 
 headers = ['puzzle_name', 'solve_num', 'solver', 'solve_epoch']
 df = pd.read_csv(in_file, names=headers)

@@ -8,8 +8,8 @@ import pandas as pd
 
 script_dir = path.dirname(path.realpath(__file__))
 in_file = path.join(script_dir, '../tables/combined.csv')
-events_out_file = path.join(script_dir, 'solve_frequencies_events.png')
-violin_out_file = path.join(script_dir, 'solve_frequencies_violin.png')
+events_out_file = path.join(script_dir, '../figures/solve_frequencies_events.png')
+violin_out_file = path.join(script_dir, '../figures/solve_frequencies_violin.png')
 
 headers = ['puzzle_name', 'solve_num', 'solver', 'solve_epoch']
 df = pd.read_csv(in_file, names=headers)
