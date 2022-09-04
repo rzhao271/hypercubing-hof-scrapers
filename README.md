@@ -31,15 +31,16 @@ The most popular hypercubing HoF is the
 1. Something to run `.sh` files.
 2. Python with virtualenv.
 
-## Instructions to generate the CSVs
+## Instructions to generate the tables and figures
 
 1. Set up a virtualenv for the repository and load in the requirements 
 with `python -m pip install -r requirements.txt`.
 2. Run `./scrape-pages.sh` to download the hall of fame pages to `pages/`.
-3. Run `python parsers/<parser-file.py>` to parse an individual 
-hall of fame page and generate a CSV in `tables/`.
-4. Run `./combine-tables.sh` to combine all the generated HoF CSVs.
-This step creates the file `tables/combined.csv`.
+3. Run `./run-parsers.sh` to parse the pages and generate CSVs in `tables/`.
+4. Run `./combine-tables.sh` to combine all the generated HoF CSVs into
+`tables/combined.csv`.
+5. Run `./run-analyzers.sh` to run the various analyzers in `analyzers/`.
+The analyzers create CSVs in `tables/` and PNGs in `figures/`.
 
 ## Sample data
 
