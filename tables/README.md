@@ -1,1 +1,2 @@
-A CSV file will go here after running a parser.
+CSV files will go here after running parsers, 
+or after running analyzers that produce CSVs.
