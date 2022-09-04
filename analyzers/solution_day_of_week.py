@@ -29,7 +29,7 @@ bars = ax.bar(['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
 ax.bar_label(bars, padding=3)
 ax.set_xlabel('Day of week', fontsize=16)
 ax.set_ylabel('Count', fontsize=16)
-ax.set_title('Day of week of HoF postings', fontsize=20)
+ax.set_title('Day of week of HoF solution dates', fontsize=20)
 fig.tight_layout()
 fig.savefig(out_file)
 plt.close(fig)
