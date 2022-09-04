@@ -6,7 +6,8 @@ def write_csv(out_file, entries):
             f.write(f'{entry["puzzle"]},{entry["solve_count"]},' +
                     f'{entry["solver_name"]},{entry["solve_date"]}\n')
 
-unwanted_matches = re.compile('(,? at age |,? ?@|\(video| on | using ).*$')
+regex = '(,? at age |,? ?@|\(video| on | using |\(?aka ).*$'
+unwanted_matches = re.compile(regex, flags=re.IGNORECASE)
 def process_name(td):
     fragments = []
     for s in td.strings:
