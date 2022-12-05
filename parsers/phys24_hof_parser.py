@@ -19,8 +19,13 @@ with open(in_file) as f:
 # Each entry holds { puzzle, solve_count, solver_name, solve_date }
 entries = []
 
-def parse_date(s):
-    parsed_date = parser.parse(s, dayfirst=False)
+def parse_date(div):
+    # One of the date strings starts with a time attached
+    string_to_parse = ''
+    for s in div.strings:
+        if '/' in s:
+            string_to_parse = s
+    parsed_date = parser.parse(string_to_parse, dayfirst=False)
     return parsed_date.timestamp()
 
 def parse_puzzle_section(puzzle_name, table):
@@ -35,7 +40,7 @@ def parse_puzzle_section(puzzle_name, table):
         # Special case for A. Farkas
         if solver_name == 'Andy Farkas':
             solver_name = 'A. Farkas'
-        solve_date = parse_date(tds[2].div.string)
+        solve_date = parse_date(tds[2].div)
         entries.append({
             'puzzle': puzzle_name,
             'solve_count': solve_count,
