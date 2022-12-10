@@ -40,7 +40,7 @@ def parse_puzzle_section(puzzle_name, table):
         })
 
 tables = [table for table in soup.find_all('table')
-          if str(table.caption).startswith('<caption>Full')]
+          if 'Full ' in str(table.caption)]
 assert len(tables) == 3
 
 parse_puzzle_section('3^4', tables[0])

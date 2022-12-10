@@ -35,12 +35,18 @@ def parse_puzzle_section(puzzle_name, table):
             'solve_date': solve_date
         })
 
+def parse_num_colours(header):
+    header_string = next(header.strings)
+    colour_ind = header_string.index('Colors')
+    assert colour_ind >= 0
+    return header_string[:colour_ind + len('Colors')]
+
 tables = soup.find_all('table')
 assert len(tables) == 7
 
 for table in tables:
-    puzzle_name = ('MHT633 ' +
-                   table.previous_sibling.previous_sibling.string)
+    colours = parse_num_colours(table.previous_sibling.previous_sibling)
+    puzzle_name = (f'MHT633 {colours}')
     parse_puzzle_section(puzzle_name, table)
 
 write_csv(out_file, entries)
