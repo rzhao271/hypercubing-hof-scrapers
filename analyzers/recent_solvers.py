@@ -10,6 +10,7 @@ headers = ['puzzle_name', 'solve_num', 'solver', 'solve_epoch']
 df = pd.read_csv(in_file, names=headers)
 
 # Get most recent solvers
-df = df.sort_values(by='solve_epoch', ascending=False).head(20)
+num_recent = 50
+df = df.sort_values(by='solve_epoch', ascending=False).head(num_recent)
 df = df[['solver', 'puzzle_name', 'solve_num']]
 df.to_csv(out_file, index=False)
